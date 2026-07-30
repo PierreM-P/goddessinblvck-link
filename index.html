@@ -278,3 +278,146 @@
   <div class="linktree-container">
 
     <header class="profile-section">
+      <div class="profile-avatar-wrapper">
+        <img src="logo.png" alt="GODDESSINBLVCK Logo" class="profile-avatar" id="avatarImg">
+      </div>
+      <h1 class="profile-title">GODDESSINBLVCK</h1>
+      <p class="profile-subtitle">Author • Researcher • Curator</p>
+      <p class="profile-bio">"The black suit is simply the canvas. The Goddess doesn't preach; she witnesses, listens, asks, and illuminates."</p>
+    </header>
+
+    <nav class="tab-navigation" aria-label="Content Categories">
+      <button class="tab-btn active" onclick="switchTab('links', this)">Links</button>
+      <button class="tab-btn" onclick="switchTab('videos', this)">Documentary</button>
+      <button class="tab-btn" onclick="switchTab('blogs', this)">Field Notes</button>
+    </nav>
+
+    <div id="links" class="tab-panel active">
+      
+      <a href="https://substack.com/@goddessinblvck" target="_blank" rel="noopener" class="card-link">
+        <div>
+          <div class="card-title">Substack</div>
+          <div class="card-subtitle">Publications, Essays & Field Notes</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="https://youtube.com/@goddessinblack" target="_blank" rel="noopener" class="card-link">
+        <div>
+          <div class="card-title">YouTube Channel</div>
+          <div class="card-subtitle">Oral History & Documentary Archive</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="https://www.instagram.com/goddessinblvck" target="_blank" rel="noopener" class="card-link">
+        <div>
+          <div class="card-title">Instagram</div>
+          <div class="card-subtitle">Visual Archival & Cultural Photography</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="https://www.threads.com/@goddessinblvck" target="_blank" rel="noopener" class="card-link">
+        <div>
+          <div class="card-title">Threads</div>
+          <div class="card-subtitle">Short-Form Cultural Commentary & Dialogue</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="https://www.tiktok.com/@goddessinblvck" target="_blank" rel="noopener" class="card-link">
+        <div>
+          <div class="card-title">TikTok</div>
+          <div class="card-subtitle">Short-Form Video & Visual Studies</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="https://bsky.app/profile/goddessinblvck.bsky.social" target="_blank" rel="noopener" class="card-link">
+        <div>
+          <div class="card-title">Bluesky</div>
+          <div class="card-subtitle">Open Social Archive & Real-Time Thoughts</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="https://www.reddit.com/u/GODDESSINBLVCK" target="_blank" rel="noopener" class="card-link">
+        <div>
+          <div class="card-title">Reddit Profile</div>
+          <div class="card-subtitle">Community Discussions & Archival Threads</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="https://linkedin.com/company/goddessinblvck" target="_blank" rel="noopener" class="card-link">
+        <div>
+          <div class="card-title">LinkedIn</div>
+          <div class="card-subtitle">Official Publishing & Institutional Network</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="mailto:contact@blvcktalisman.com" class="card-link">
+        <div>
+          <div class="card-title">BLVCKTALISMAN Production</div>
+          <div class="card-subtitle">Field Inquiries, Interviews & Submissions</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+    </div>
+
+    <div id="videos" class="tab-panel">
+      <div class="media-card">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="GREEN TONGUES Teaser" allowfullscreen></iframe>
+        </div>
+        <div class="media-body">
+          <div class="media-tag">Flagship Initiative</div>
+          <h2 class="media-title">GREEN TONGUES: The Light in the Smoke</h2>
+          <p class="media-desc">An oral history and documentary archive exploring South Africa's socio-cultural relationship with cannabis.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="blogs" class="tab-panel">
+      <div class="media-card">
+        <div class="media-body">
+          <div class="media-tag">CANNATOKE Pillar</div>
+          <h2 class="media-title">The Sacred & The Policy: Cannabis Heritage</h2>
+          <p class="media-desc">Exploring the historical roots and indigenous relationship with cannabis ahead of modern economic transitions.</p>
+          <a href="https://substack.com/@goddessinblvck" target="_blank" class="media-btn">Read Entry →</a>
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="media-body">
+          <div class="media-tag">Threads Pillar</div>
+          <h2 class="media-title">The Silhouette Thesis: Identity in Anonymity</h2>
+          <p class="media-desc">How structural garment commentary shifts focus away from individual ego onto the surrounding cultural landscape.</p>
+          <a href="https://substack.com/@goddessinblvck" target="_blank" class="media-btn">Read Entry →</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      BLVCKTALISMAN Umbrella &copy; 2026
+    </footer>
+
+  </div>
+
+  <script>
+    function switchTab(panelId, btnElement) {
+      const panels = document.querySelectorAll('.tab-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(panelId).classList.add('active');
+      btnElement.classList.add('active');
+    }
+  </script>
+</body>
+</html>
