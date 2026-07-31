@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GODDESSINBLVCK | Official Links & Archive</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     /* CSS RESET & VARIABLES */
     *, *::before, *::after {
@@ -86,7 +87,7 @@
 
     .profile-subtitle {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 1.5px;
@@ -171,6 +172,19 @@
       background-color: var(--card-hover);
       border-color: rgba(255, 255, 255, 0.5);
       transform: translateY(-2px);
+    }
+
+    .card-content-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .card-icon {
+      font-size: 1.3rem;
+      color: var(--accent);
+      width: 24px;
+      text-align: center;
     }
 
     .card-title {
@@ -282,7 +296,7 @@
         <img src="logo.png" alt="GODDESSINBLVCK Logo" class="profile-avatar" id="avatarImg">
       </div>
       <h1 class="profile-title">GODDESSINBLVCK</h1>
-      <p class="profile-subtitle">Author • Researcher • Curator</p>
+      <p class="profile-subtitle">Author • Researcher • Curator • Artist</p>
       <p class="profile-bio">"The black suit is simply the canvas. The Goddess doesn't preach; she witnesses, listens, asks, and illuminates."</p>
     </header>
 
@@ -295,73 +309,100 @@
     <div id="links" class="tab-panel active">
       
       <a href="https://substack.com/@goddessinblvck" target="_blank" rel="noopener" class="card-link">
-        <div>
-          <div class="card-title">Substack</div>
-          <div class="card-subtitle">Publications, Essays & Field Notes</div>
+        <div class="card-content-wrapper">
+          <i class="fa-solid fa-bookmark card-icon"></i>
+          <div>
+            <div class="card-title">Substack</div>
+            <div class="card-subtitle">Publications, Essays & Field Notes</div>
+          </div>
         </div>
         <span class="card-arrow">→</span>
       </a>
 
       <a href="https://youtube.com/@goddessinblack" target="_blank" rel="noopener" class="card-link">
-        <div>
-          <div class="card-title">YouTube Channel</div>
-          <div class="card-subtitle">Oral History & Documentary Archive</div>
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-youtube card-icon"></i>
+          <div>
+            <div class="card-title">YouTube Channel</div>
+            <div class="card-subtitle">Oral History & Documentary Archive</div>
+          </div>
         </div>
         <span class="card-arrow">→</span>
       </a>
 
       <a href="https://www.instagram.com/goddessinblvck" target="_blank" rel="noopener" class="card-link">
-        <div>
-          <div class="card-title">Instagram</div>
-          <div class="card-subtitle">Visual Archival & Cultural Photography</div>
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-instagram card-icon"></i>
+          <div>
+            <div class="card-title">Instagram</div>
+            <div class="card-subtitle">Visual Archival & Cultural Photography</div>
+          </div>
         </div>
         <span class="card-arrow">→</span>
       </a>
 
       <a href="https://www.threads.com/@goddessinblvck" target="_blank" rel="noopener" class="card-link">
-        <div>
-          <div class="card-title">Threads</div>
-          <div class="card-subtitle">Short-Form Cultural Commentary & Dialogue</div>
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-threads card-icon"></i>
+          <div>
+            <div class="card-title">Threads</div>
+            <div class="card-subtitle">Short-Form Cultural Commentary & Dialogue</div>
+          </div>
         </div>
         <span class="card-arrow">→</span>
       </a>
 
       <a href="https://www.tiktok.com/@goddessinblvck" target="_blank" rel="noopener" class="card-link">
-        <div>
-          <div class="card-title">TikTok</div>
-          <div class="card-subtitle">Short-Form Video & Visual Studies</div>
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-tiktok card-icon"></i>
+          <div>
+            <div class="card-title">TikTok</div>
+            <div class="card-subtitle">Short-Form Video & Visual Studies</div>
+          </div>
         </div>
         <span class="card-arrow">→</span>
       </a>
 
       <a href="https://bsky.app/profile/goddessinblvck.bsky.social" target="_blank" rel="noopener" class="card-link">
-        <div>
-          <div class="card-title">Bluesky</div>
-          <div class="card-subtitle">Open Social Archive & Real-Time Thoughts</div>
+        <div class="card-content-wrapper">
+          <i class="fa-solid fa-cloud card-icon"></i>
+          <div>
+            <div class="card-title">Bluesky</div>
+            <div class="card-subtitle">Open Social Archive & Real-Time Thoughts</div>
+          </div>
         </div>
         <span class="card-arrow">→</span>
       </a>
 
       <a href="https://www.reddit.com/u/GODDESSINBLVCK" target="_blank" rel="noopener" class="card-link">
-        <div>
-          <div class="card-title">Reddit Profile</div>
-          <div class="card-subtitle">Community Discussions & Archival Threads</div>
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-reddit-alien card-icon"></i>
+          <div>
+            <div class="card-title">Reddit Profile</div>
+            <div class="card-subtitle">Community Discussions & Archival Threads</div>
+          </div>
         </div>
         <span class="card-arrow">→</span>
       </a>
 
       <a href="https://linkedin.com/company/goddessinblvck" target="_blank" rel="noopener" class="card-link">
-        <div>
-          <div class="card-title">LinkedIn</div>
-          <div class="card-subtitle">Official Publishing & Institutional Network</div>
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-linkedin-in card-icon"></i>
+          <div>
+            <div class="card-title">LinkedIn</div>
+            <div class="card-subtitle">Official Publishing & Institutional Network</div>
+          </div>
         </div>
         <span class="card-arrow">→</span>
       </a>
 
       <a href="mailto:contact@blvcktalisman.com" class="card-link">
-        <div>
-          <div class="card-title">BLVCKTALISMAN Production</div>
-          <div class="card-subtitle">Field Inquiries, Interviews & Submissions</div>
+        <div class="card-content-wrapper">
+          <i class="fa-regular fa-envelope card-icon"></i>
+          <div>
+            <div class="card-title">BLVCKTALISMAN Production</div>
+            <div class="card-subtitle">Field Inquiries, Interviews & Submissions</div>
+          </div>
         </div>
         <span class="card-arrow">→</span>
       </a>
