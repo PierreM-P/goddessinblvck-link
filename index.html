@@ -3,306 +3,462 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GODDESSINBLVCK — Exclusive Access</title>
-  
+  <title>GODDESSINBLVCK | Official Links & Archive</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    :root {
-      --accent: #10b981;
-      --accent-hover: #059669;
-      --bg-dark: #0a0c10;
-      --card-bg: rgba(17, 20, 26, 0.92);
-      --input-bg: #1a1f29;
-      --border: #262c38;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-    }
-
-    * {
+    /* CSS RESET & VARIABLES */
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    :root {
+      --card-bg: rgba(22, 22, 22, 0.85);
+      --card-hover: rgba(34, 34, 34, 0.95);
+      --border-color: rgba(255, 255, 255, 0.15);
+      --text-main: #f0f0f0;
+      --text-muted: #a0a0a0;
+      --accent: #ffffff;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "Courier New", Courier, monospace;
     }
 
     body {
+      background-image: linear-gradient(rgba(13, 13, 13, 0.82), rgba(13, 13, 13, 0.82)), url('bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #0d0d0d;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
       min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    /* CONTAINER */
+    .linktree-container {
+      width: 100%;
+      max-width: 580px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* HEADER & LOGO */
+    .profile-section {
+      text-align: center;
+      margin-bottom: 28px;
+      width: 100%; /* Ensure full width for centering */
+    }
+
+    /* Logo Specific Styling */
+    .logo-wrapper {
+      max-width: 250px; /* Adjust size to taste */
+      width: 80%;       /* Responsive width on small screens */
+      margin: 0 auto 20px auto; /* Center and provide bottom spacing */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* Remove border/circle from avatar style */
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.8)); /* Add soft shadow for depth */
+    }
+
+    .profile-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      color: var(--accent);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+
+    .profile-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+
+    .profile-bio {
+      font-size: 0.9rem;
+      color: #e0e0e0;
+      max-width: 440px;
+      margin: 0 auto;
+      font-style: italic;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+    }
+
+    /* TAB NAVIGATION */
+    .tab-navigation {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 10px 0;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .tab-btn.active {
+      background-color: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* CONTENT PANELS */
+    .tab-panel {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .tab-panel.active {
+      display: flex;
+    }
+
+    /* CARD STYLES */
+    .card-link {
       display: flex;
       align-items: center;
-      justify-content: center;
-      background: linear-gradient(rgba(10, 12, 16, 0.75), rgba(10, 12, 16, 0.85)), url('bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: var(--text-main);
-      padding: 24px 16px;
-    }
-
-    .card-container {
-      background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      width: 100%;
-      max-width: 440px;
-      padding: 40px 32px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-      text-align: center;
-    }
-
-    .sub-tagline {
-      color: var(--accent);
-      font-size: 11px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    /* FULL LOGO FILL STYLING */
-    .brand-logo {
-      width: 100%;
-      max-width: 180px;
-      height: auto;
-      object-fit: contain;
-      margin: 0 auto 16px auto;
-      display: block;
-    }
-
-    h2 {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    p.description {
-      color: var(--text-muted);
-      font-size: 13px;
-      margin-bottom: 28px;
-      line-height: 1.5;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-      text-align: left;
-    }
-
-    label {
-      display: block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="password"],
-    select {
-      width: 100%;
-      padding: 14px 16px;
-      background-color: var(--input-bg);
-      border: 1px solid var(--border);
+      justify-content: space-between;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 16px 20px;
       border-radius: 6px;
-      font-size: 14px;
       color: var(--text-main);
-      outline: none;
+      text-decoration: none;
+      backdrop-filter: blur(8px);
       transition: all 0.2s ease;
     }
 
-    input:focus, select:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    .card-link:hover {
+      background-color: var(--card-hover);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
     }
 
-    select {
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-      background-size: 16px;
-    }
-
-    .checkbox-group {
+    .card-content-wrapper {
       display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 24px;
-      text-align: left;
+      align-items: center;
+      gap: 16px;
     }
 
-    .checkbox-group input {
-      margin-top: 3px;
-      accent-color: var(--accent);
-      width: 16px;
-      height: 16px;
-      cursor: pointer;
+    .card-icon {
+      font-size: 1.3rem;
+      color: var(--accent);
+      width: 24px;
+      text-align: center;
     }
 
-    .checkbox-group span {
-      font-size: 12px;
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .card-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .card-arrow {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .card-link:hover .card-arrow {
+      color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    /* MEDIA CARD (VIDEOS & BLOGS) */
+    .media-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .media-body {
+      padding: 16px;
+    }
+
+    .media-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #c5a059;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .media-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .media-desc {
+      font-size: 0.85rem;
       color: var(--text-muted);
       line-height: 1.4;
+      margin-bottom: 12px;
     }
 
-    button {
-      width: 100%;
-      padding: 14px 16px;
-      background-color: var(--accent);
-      color: #000000;
-      border: none;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
+    .media-btn {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-main);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
       text-transform: uppercase;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
+      letter-spacing: 1px;
     }
 
-    button:hover {
-      background-color: var(--accent-hover);
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    .status-msg {
-      margin-top: 16px;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    .status-msg.error {
-      color: #ef4444;
-    }
-
-    .status-msg.success {
-      color: var(--accent);
+    /* FOOTER */
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
   </style>
 </head>
 <body>
 
-  <div class="card-container">
-    
-    <!-- STEP 1: ACCESS CODE GATE -->
-    <div id="gate-section">
-      <div class="sub-tagline">LUXURY • DISCRETION • ACCESS</div>
-      <img src="logo.png" alt="GODDESSINBLVCK Logo" class="brand-logo" />
-      <h2>EXCLUSIVE ACCESS</h2>
-      <p class="description">Enter your access code to unlock the private portal.</p>
-      
-      <div class="form-group">
-        <label for="access-code">Access Code</label>
-        <input type="password" id="access-code" placeholder="Enter code" />
+  <div class="linktree-container">
+
+    <header class="profile-section">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="GODDESSINBLVCK Seal" class="logo-img">
       </div>
-      <button type="button" onclick="checkCode()">UNLOCK PORTAL</button>
-      <p id="gate-error" class="status-msg error"></p>
-    </div>
-
-    <!-- STEP 2: VIP REGISTRATION FORM -->
-    <div id="form-section" class="hidden">
-      <div class="sub-tagline">LUXURY • DISCRETION • ACCESS</div>
-      <img src="logo.png" alt="GODDESSINBLVCK Logo" class="brand-logo" />
       
-      <p class="description">
-        Register below to join the private waitlist for exclusive private releases, bespoke consultation access, and VIP dispatch notifications.
-      </p>
+      <h1 class="profile-title">GODDESSINBLVCK</h1>
+      <p class="profile-subtitle">Author • Researcher • Curator • Artist</p>
+      <p class="profile-bio">"The black suit is simply the canvas. The Goddess doesn't preach; she witnesses, listens, asks, and illuminates."</p>
+    </header>
 
-      <form action="https://script.google.com/macros/s/AKfycbytGRqNM9S8x9ZueCbU48niePYjxbT_xoYyzB_uJ_vVEB7SBIpgXq0upVymo5efya4CHg/exec" method="POST" id="signup-form">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" name="name" id="name" placeholder="e.g. Marcus Vance" required />
+    <nav class="tab-navigation" aria-label="Content Categories">
+      <button class="tab-btn active" onclick="switchTab('links', this)">Links</button>
+      <button class="tab-btn" onclick="switchTab('videos', this)">Documentary</button>
+      <button class="tab-btn" onclick="switchTab('blogs', this)">Field Notes</button>
+    </nav>
+
+    <div id="links" class="tab-panel active">
+      
+      <a href="https://substack.com/@goddessinblvck" target="_blank" rel="noopener" class="card-link">
+        <div class="card-content-wrapper">
+          <i class="fa-solid fa-bookmark card-icon"></i>
+          <div>
+            <div class="card-title">Substack</div>
+            <div class="card-subtitle">Publications, Essays & Field Notes</div>
+          </div>
         </div>
+        <span class="card-arrow">→</span>
+      </a>
 
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" name="email" id="email" placeholder="name@domain.com" required />
+      <a href="https://youtube.com/@goddessinblack" target="_blank" rel="noopener" class="card-link">
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-youtube card-icon"></i>
+          <div>
+            <div class="card-title">YouTube Channel</div>
+            <div class="card-subtitle">Oral History & Documentary Archive</div>
+          </div>
         </div>
+        <span class="card-arrow">→</span>
+      </a>
 
-        <div class="form-group">
-          <label for="whatsapp">WhatsApp Number</label>
-          <input type="tel" name="whatsapp" id="whatsapp" placeholder="+27 82 000 0000" required />
+      <a href="https://www.instagram.com/goddessinblvck" target="_blank" rel="noopener" class="card-link">
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-instagram card-icon"></i>
+          <div>
+            <div class="card-title">Instagram</div>
+            <div class="card-subtitle">Visual Archival & Cultural Photography</div>
+          </div>
         </div>
+        <span class="card-arrow">→</span>
+      </a>
 
-        <div class="form-group">
-          <label for="region">Primary Region</label>
-          <select name="region" id="region" required>
-            <option value="" disabled selected>Select your region</option>
-            <option value="Gauteng">Gauteng</option>
-            <option value="Western Cape">Western Cape</option>
-            <option value="KwaZulu-Natal">KwaZulu-Natal</option>
-            <option value="Other / International">Other / International</option>
-          </select>
+      <a href="https://www.threads.com/@goddessinblvck" target="_blank" rel="noopener" class="card-link">
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-threads card-icon"></i>
+          <div>
+            <div class="card-title">Threads</div>
+            <div class="card-subtitle">Short-Form Cultural Commentary & Dialogue</div>
+          </div>
         </div>
+        <span class="card-arrow">→</span>
+      </a>
 
-        <div class="checkbox-group">
-          <input type="checkbox" id="age-check" required />
-          <span>I confirm that I am 18 years of age or older and agree to receive private access notifications.</span>
+      <a href="https://www.tiktok.com/@goddessinblvck" target="_blank" rel="noopener" class="card-link">
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-tiktok card-icon"></i>
+          <div>
+            <div class="card-title">TikTok</div>
+            <div class="card-subtitle">Short-Form Video & Visual Studies</div>
+          </div>
         </div>
+        <span class="card-arrow">→</span>
+      </a>
 
-        <button type="submit">REQUEST ACCESS</button>
-      </form>
+      <a href="https://bsky.app/profile/goddessinblvck.bsky.social" target="_blank" rel="noopener" class="card-link">
+        <div class="card-content-wrapper">
+          <i class="fa-solid fa-cloud card-icon"></i>
+          <div>
+            <div class="card-title">Bluesky</div>
+            <div class="card-subtitle">Open Social Archive & Real-Time Thoughts</div>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
 
-      <p id="form-status" class="status-msg"></p>
+      <a href="https://www.reddit.com/u/GODDESSINBLVCK" target="_blank" rel="noopener" class="card-link">
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-reddit-alien card-icon"></i>
+          <div>
+            <div class="card-title">Reddit Profile</div>
+            <div class="card-subtitle">Community Discussions & Archival Threads</div>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="https://linkedin.com/company/goddessinblvck" target="_blank" rel="noopener" class="card-link">
+        <div class="card-content-wrapper">
+          <i class="fa-brands fa-linkedin-in card-icon"></i>
+          <div>
+            <div class="card-title">LinkedIn</div>
+            <div class="card-subtitle">Official Publishing & Institutional Network</div>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="mailto:contact@blvcktalisman.com" class="card-link">
+        <div class="card-content-wrapper">
+          <i class="fa-regular fa-envelope card-icon"></i>
+          <div>
+            <div class="card-title">BLVCKTALISMAN Production</div>
+            <div class="card-subtitle">Field Inquiries, Interviews & Submissions</div>
+          </div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
     </div>
+
+    <div id="videos" class="tab-panel">
+      <div class="media-card">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="GREEN TONGUES Teaser" allowfullscreen></iframe>
+        </div>
+        <div class="media-body">
+          <div class="media-tag">Flagship Initiative</div>
+          <h2 class="media-title">GREEN TONGUES: The Light in the Smoke</h2>
+          <p class="media-desc">An oral history and documentary archive exploring South Africa's socio-cultural relationship with cannabis.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="blogs" class="tab-panel">
+      <div class="media-card">
+        <div class="media-body">
+          <div class="media-tag">CANNATOKE Pillar</div>
+          <h2 class="media-title">The Sacred & The Policy: Cannabis Heritage</h2>
+          <p class="media-desc">Exploring the historical roots and indigenous relationship with cannabis ahead of modern economic transitions.</p>
+          <a href="https://substack.com/@goddessinblvck" target="_blank" class="media-btn">Read Entry →</a>
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="media-body">
+          <div class="media-tag">Threads Pillar</div>
+          <h2 class="media-title">The Silhouette Thesis: Identity in Anonymity</h2>
+          <p class="media-desc">How structural garment commentary shifts focus away from individual ego onto the surrounding cultural landscape.</p>
+          <a href="https://substack.com/@goddessinblvck" target="_blank" class="media-btn">Read Entry →</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      BLVCKTALISMAN Umbrella &copy; 2026
+    </footer>
 
   </div>
 
   <script>
-    const SECRET_PASSCODE = "VIP2026"; 
+    function switchTab(panelId, btnElement) {
+      const panels = document.querySelectorAll('.tab-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
 
-    function checkCode() {
-      const userInput = document.getElementById("access-code").value.trim();
-      const errorElement = document.getElementById("gate-error");
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
 
-      if (userInput === SECRET_PASSCODE) {
-        document.getElementById("gate-section").classList.add("hidden");
-        document.getElementById("form-section").classList.remove("hidden");
-      } else {
-        errorElement.textContent = "Invalid access code. Please try again.";
-      }
+      document.getElementById(panelId).classList.add('active');
+      btnElement.classList.add('active');
     }
-
-    document.getElementById("access-code").addEventListener("keypress", function(e) {
-      if (e.key === "Enter") {
-        checkCode();
-      }
-    });
-
-    const form = document.getElementById("signup-form");
-    const status = document.getElementById("form-status");
-
-    async function handleSubmit(event) {
-      event.preventDefault();
-      const data = new FormData(event.target);
-      
-      status.textContent = "Submitting...";
-      status.className = "status-msg";
-
-      try {
-        await fetch(event.target.action, {
-          method: 'POST',
-          body: data,
-          mode: 'no-cors'
-        });
-
-        status.textContent = "Access requested! Check your email or WhatsApp soon.";
-        status.className = "status-msg success";
-        form.reset();
-      } catch (error) {
-        status.textContent = "Network error. Please try again later.";
-        status.className = "status-msg error";
-      }
-    }
-
-    form.addEventListener("submit", handleSubmit);
   </script>
-
 </body>
 </html>
